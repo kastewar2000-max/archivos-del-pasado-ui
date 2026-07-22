@@ -1,1 +1,16 @@
-
+[
+  {
+    "slot": 1,
+    "titulo": "Curiosidad histórica 1",
+    "subtitulo": "Descripción de prueba",
+    "imagen": "img/imagen1.jpg",
+    "enlace": "#"
+  },
+  {
+    "slot": 2,
+    "titulo": "Curiosidad histórica 2",
+    "subtitulo": "Descripción de prueba",
+    "imagen": "img/imagen2.jpg",
+    "enlace": "#"
+  }
+]
