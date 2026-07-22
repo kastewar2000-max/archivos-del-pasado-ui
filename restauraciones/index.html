@@ -1,1 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.tarjeta {
+  border-radius: 10px;
+  overflow: hidden;
+  background: #111;
+  color: white;
+}
+
+.tarjeta img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+.contenido {
+  padding: 12px;
+}
+
+.titulo {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.subtitulo {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+@media(max-width:700px){
+  .galeria {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="galeria" id="galeria"></div>
+
+<script>
+fetch("restauraciones.json")
+.then(res => res.json())
+.then(datos => {
+
+let html="";
+
+datos.forEach(item => {
+
+html += `
+<div class="tarjeta">
+
+<img src="../${item.imagen}">
+
+<div class="contenido">
+
+<div class="titulo">
+${item.titulo}
+</div>
+
+<div class="subtitulo">
+${item.subtitulo}
+</div>
+
+</div>
+
+</div>
+`;
+
+});
+
+document.getElementById("galeria").innerHTML = html;
+
+});
+</script>
+
+</body>
+</html>
