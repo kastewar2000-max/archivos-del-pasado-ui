@@ -3,42 +3,42 @@
     "slot": 1,
     "titulo": "La historia desconocida",
     "subtitulo": "Una curiosidad histórica de prueba",
-    "imagen": "https://via.placeholder.com/400x250",
+    "imagen": "img/imagen1.jpg",
     "enlace": "#"
   },
   {
     "slot": 2,
     "titulo": "El misterio del pasado",
     "subtitulo": "Otra curiosidad histórica",
-    "imagen": "https://via.placeholder.com/400x250",
+    "imagen": "img/imagen2.jpg",
     "enlace": "#"
   },
   {
     "slot": 3,
     "titulo": "Documental restaurado",
     "subtitulo": "Archivo recuperado en HD",
-    "imagen": "https://via.placeholder.com/400x250",
+    "imagen": "img/imagen3.jpg",
     "enlace": "#"
   },
   {
     "slot": 4,
     "titulo": "Metraje histórico",
     "subtitulo": "Imágenes restauradas",
-    "imagen": "https://via.placeholder.com/400x250",
+    "imagen": "img/imagen4.jpg",
     "enlace": "#"
   },
   {
     "slot": 5,
     "titulo": "Fotografías antiguas",
     "subtitulo": "Colección restaurada",
-    "imagen": "https://via.placeholder.com/400x250",
+    "imagen": "img/imagen5.jpg",
     "enlace": "#"
   },
   {
     "slot": 6,
     "titulo": "Archivo recuperado",
     "subtitulo": "Material histórico",
-    "imagen": "https://via.placeholder.com/400x250",
+    "imagen": "img/imagen6.jpg",
     "enlace": "#"
   }
 ]
