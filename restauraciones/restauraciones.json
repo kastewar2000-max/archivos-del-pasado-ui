@@ -1,1 +1,30 @@
-
+[
+  {
+    "slot": 1,
+    "titulo": "Documental restaurado 1",
+    "subtitulo": "Archivo recuperado en alta definición",
+    "imagen": "img/imagen3.jpg",
+    "enlace": "#"
+  },
+  {
+    "slot": 2,
+    "titulo": "Documental restaurado 2",
+    "subtitulo": "Material histórico restaurado",
+    "imagen": "img/imagen4.jpg",
+    "enlace": "#"
+  },
+  {
+    "slot": 3,
+    "titulo": "Archivo recuperado",
+    "subtitulo": "Imágenes históricas restauradas",
+    "imagen": "img/imagen5.jpg",
+    "enlace": "#"
+  },
+  {
+    "slot": 4,
+    "titulo": "Metraje histórico",
+    "subtitulo": "Colección documental recuperada",
+    "imagen": "img/imagen6.jpg",
+    "enlace": "#"
+  }
+]
