@@ -51,6 +51,36 @@ transform:scale(1.02);
 }
 
 
+/* ANIMACIÓN DE ENTRADA */
+
+.entrada {
+
+animation:aparecer 0.5s ease forwards;
+opacity:0;
+transform:translateY(20px);
+
+}
+
+
+@keyframes aparecer {
+
+from {
+
+opacity:0;
+transform:translateY(20px);
+
+}
+
+to {
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+
 /* IMAGEN */
 
 .tarjeta img {
@@ -147,7 +177,7 @@ datos.forEach(item=>{
 html += `
 
 
-<a href="${item.enlace}" target="_blank" class="tarjeta">
+<a href="${item.enlace}" target="_blank" class="tarjeta entrada">
 
 
 <img src="https://kastewar2000-max.github.io/archivos-del-pasado-ui/${item.imagen}" alt="${item.titulo}">
