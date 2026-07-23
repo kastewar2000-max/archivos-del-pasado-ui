@@ -145,12 +145,9 @@ font-size:12px;
 
 <script>
 
-
 fetch("curiosidades.json")
 
-
 .then(res=>res.json())
-
 
 .then(datos=>{
 
@@ -167,7 +164,7 @@ html += `
 <a href="${item.enlace}" class="tarjeta">
 
 
-<img src="${item.imagen}" alt="${item.titulo}">
+<img src="https://kastewar2000-max.github.io/archivos-del-pasado-ui/${item.imagen}" alt="${item.titulo}">
 
 
 <div class="contenido">
