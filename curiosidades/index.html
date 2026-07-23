@@ -51,13 +51,13 @@ transform:scale(1.02);
 }
 
 
-/* ANIMACIÓN DE ENTRADA */
+/* ANIMACIÓN ENTRADA */
 
 .entrada {
 
-animation:aparecer 0.5s ease forwards;
+animation:aparecer 0.6s ease forwards;
 opacity:0;
-transform:translateY(20px);
+transform:translateY(25px);
 
 }
 
@@ -67,7 +67,7 @@ transform:translateY(20px);
 from {
 
 opacity:0;
-transform:translateY(20px);
+transform:translateY(25px);
 
 }
 
@@ -171,13 +171,13 @@ fetch("curiosidades.json")
 let html="";
 
 
-datos.forEach(item=>{
+datos.forEach((item,index)=>{
 
 
 html += `
 
 
-<a href="${item.enlace}" target="_blank" class="tarjeta entrada">
+<a href="${item.enlace}" target="_blank" class="tarjeta entrada" style="animation-delay:${index*0.25}s">
 
 
 <img src="https://kastewar2000-max.github.io/archivos-del-pasado-ui/${item.imagen}" alt="${item.titulo}">
