@@ -72,7 +72,7 @@ let html="";
 datos.forEach(item => {
 
 html += `
-<div class="tarjeta">
+<a href="${item.enlace}" class="tarjeta">
 
 <img src="../${item.imagen}">
 
@@ -88,7 +88,7 @@ ${item.subtitulo}
 
 </div>
 
-</div>
+</a>
 `;
 
 });
