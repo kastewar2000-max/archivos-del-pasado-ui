@@ -88,7 +88,7 @@ transform:translateY(0);
 .tarjeta img {
 
 width:100%;
-aspect-ratio:16/10;
+height:240px;
 object-fit:cover;
 display:block;
 
@@ -104,15 +104,18 @@ bottom:0;
 left:0;
 right:0;
 
-padding:35px 18px 18px;
+padding:50px 18px 18px;
 
-background:rgba(80,0,0,0.85);
+background:linear-gradient(
+transparent,
+rgba(60,0,0,0.92)
+);
 
 border-radius:12px 12px 0 0;
 
-border-top:1px solid rgba(255,80,80,0.5);
+border-top:1px solid rgba(255,80,80,0.35);
 
-backdrop-filter:blur(3px);
+backdrop-filter:blur(2px);
 
 }
 
@@ -143,28 +146,46 @@ line-height:1.3;
 
 @media(max-width:700px){
 
+
 .galeria{
 
 grid-template-columns:repeat(2,minmax(0,1fr));
 width:95%;
+gap:10px;
+
+}
+
+
+.tarjeta img{
+
+height:180px;
+
+}
+
+
+.contenido{
+
+padding:40px 10px 10px;
 
 }
 
 
 .titulo{
 
-font-size:15px;
+font-size:14px;
 
 }
 
 
 .subtitulo{
 
-font-size:12px;
+font-size:11px;
 
 }
 
+
 }
+
 
 </style>
 
