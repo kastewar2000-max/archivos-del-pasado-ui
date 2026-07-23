@@ -147,7 +147,7 @@ datos.forEach(item=>{
 html += `
 
 
-<div class="tarjeta" onclick="abrirEnlace('${item.enlace}')">
+<a href="${item.enlace}" target="_blank" class="tarjeta">
 
 
 <img src="https://kastewar2000-max.github.io/archivos-del-pasado-ui/${item.imagen}" alt="${item.titulo}">
@@ -173,7 +173,7 @@ ${item.subtitulo}
 </div>
 
 
-</div>
+</a>
 
 
 `;
@@ -186,13 +186,6 @@ document.getElementById("galeria").innerHTML=html;
 
 
 });
-
-
-function abrirEnlace(url){
-
-window.open(url,"_blank");
-
-}
 
 
 </script>
