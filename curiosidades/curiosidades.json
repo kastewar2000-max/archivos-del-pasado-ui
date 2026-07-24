@@ -1,16 +1,23 @@
 [
   {
-    "slot": 1,
-    "titulo": "EL GATO ESPÍA DE LA C.I.A.",
-    "subtitulo": "En plena guerra fría a EEUU se le ocurrió usar un gato como espía.",
-    "imagen": "img/imagen1.jpg",
-    "enlace": "https://www.archivosdelpasado.com/CURIOSIDADES/el-gato-esp%C3%ADa-de-la-cia"
+    "imagen": "img/gato.jpg",
+    "titulo": "El gato espía de la CIA",
+    "subtitulo": "Una curiosa operación de inteligencia que utilizó un gato como método de vigilancia durante la Guerra Fría.",
+    "enlace": "https://www.archivosdelpasado.com",
+    "categoria": "curiosidad",
+    "etiqueta": "💡 CURIOSIDAD",
+    "colorEtiqueta": "rojo",
+    "colorPanel": "rojo"
   },
+
   {
-    "slot": 2,
-    "titulo": "Curiosidad histórica 2",
-    "subtitulo": "Descripción de prueba",
-    "imagen": "img/imagen2.jpg",
-    "enlace": "#"
+    "imagen": "img/imagen3.jpg",
+    "titulo": "Un documento histórico recuperado",
+    "subtitulo": "Imágenes restauradas que muestran una historia olvidada del pasado.",
+    "enlace": "https://www.archivosdelpasado.com",
+    "categoria": "archivo",
+    "etiqueta": "🎞️ ARCHIVO RESTAURADO",
+    "colorEtiqueta": "negro",
+    "colorPanel": "azul"
   }
 ]
