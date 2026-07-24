@@ -9,172 +9,268 @@
 <style>
 
 body{
-    margin:0;
-    font-family:Arial, sans-serif;
-    background:transparent;
+margin:0;
+font-family:Arial,sans-serif;
+background:transparent;
 }
+
 
 /* GALERÍA */
 
 .galeria{
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:20px;
-    width:90%;
-    max-width:1100px;
-    margin:auto;
-    box-sizing:border-box;
+
+display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:20px;
+width:90%;
+max-width:1100px;
+margin:auto;
+box-sizing:border-box;
+
 }
+
 
 /* TARJETA */
 
 .tarjeta{
-    position:relative;
-    text-decoration:none;
-    color:white;
-    border-radius:12px;
-    overflow:hidden;
-    display:block;
-    transition:.25s;
-    cursor:pointer;
-    background:#111;
-    box-shadow:0 8px 20px rgba(0,0,0,.35);
+
+position:relative;
+text-decoration:none;
+color:white;
+border-radius:12px;
+overflow:hidden;
+display:block;
+cursor:pointer;
+
+background:#111;
+
+transition:box-shadow .30s ease;
+
+box-shadow:0 8px 20px rgba(0,0,0,.35);
+
 }
+
 
 .tarjeta:hover{
-    transform:translateY(-4px);
-    box-shadow:0 14px 30px rgba(0,0,0,.45);
+
+box-shadow:0 16px 36px rgba(0,0,0,.50);
+
 }
 
-/* ANIMACIÓN */
+
+/* ANIMACIÓN ENTRADA */
 
 .entrada{
-    animation:aparecer .6s ease forwards;
-    opacity:0;
-    transform:translateY(25px);
+
+animation:aparecer .6s ease forwards;
+opacity:0;
+transform:translateY(25px);
+
 }
 
+
 @keyframes aparecer{
-    from{
-        opacity:0;
-        transform:translateY(25px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+
+from{
+
+opacity:0;
+transform:translateY(25px);
+
 }
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+
 
 /* IMAGEN */
 
 .tarjeta img{
-    width:100%;
-    aspect-ratio:16/10;
-    object-fit:contain;
-    display:block;
-    background:#111;
+
+width:100%;
+
+aspect-ratio:16/10;
+
+object-fit:contain;
+
+display:block;
+
+background:#111;
+
+transition:transform .45s ease;
+
 }
+
+
+/* ZOOM IMAGEN PC */
+
+.tarjeta:hover img{
+
+transform:scale(1.06);
+
+}
+
+
 
 /* TEXTO PC */
 
 .contenido{
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:0;
 
-    padding:18px 15px 15px;
+position:absolute;
 
-    background:rgba(90,0,0,.72);
+left:0;
+right:0;
+bottom:0;
 
-    backdrop-filter:blur(5px);
-    -webkit-backdrop-filter:blur(5px);
 
-    border-top:1px solid rgba(255,255,255,.18);
+padding:18px 15px 15px;
 
-    box-shadow:0 -8px 18px rgba(0,0,0,.25);
+
+background:rgba(110,0,0,.68);
+
+
+backdrop-filter:blur(5px);
+
+-webkit-backdrop-filter:blur(5px);
+
+
+border-top:1px solid rgba(255,160,160,.35);
+
+
+box-shadow:0 -10px 20px rgba(120,0,0,.45);
+
 }
+
+
+
+/* TITULO */
 
 .titulo{
-    font-size:18px;
-    font-weight:bold;
-    line-height:1.2;
+
+font-size:18px;
+font-weight:bold;
+line-height:1.2;
+
 }
+
+
+/* SUBTITULO */
 
 .subtitulo{
-    font-size:13px;
-    margin-top:7px;
-    line-height:1.35;
 
-    display:-webkit-box;
-    -webkit-line-clamp:3;
-    -webkit-box-orient:vertical;
-    overflow:hidden;
+font-size:13px;
+margin-top:7px;
+line-height:1.35;
 
-    color:#f0f0f0;
+color:#f0f0f0;
+
+
+display:-webkit-box;
+-webkit-line-clamp:3;
+-webkit-box-orient:vertical;
+overflow:hidden;
+
 }
 
-/* ------------------------ */
-/* MÓVIL */
-/* ------------------------ */
 
-@media (max-width:700px){
+
+/* ---------------- */
+/* MOVIL */
+/* ---------------- */
+
+
+@media(max-width:700px){
+
 
 .galeria{
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    width:95%;
-    gap:12px;
+
+grid-template-columns:repeat(2,minmax(0,1fr));
+
+width:95%;
+
+gap:12px;
+
 }
+
+
 
 .tarjeta{
-    display:flex;
-    flex-direction:column;
-    border-radius:12px;
-    overflow:hidden;
+
+display:flex;
+
+flex-direction:column;
+
 }
+
+
 
 .tarjeta:hover{
-    transform:none;
+
+box-shadow:0 8px 20px rgba(0,0,0,.35);
+
 }
 
-/* Imagen completa */
+
+
+.tarjeta:hover img{
+
+transform:none;
+
+}
+
+
 
 .tarjeta img{
-    width:100%;
-    aspect-ratio:16/10;
-    object-fit:cover;
+
+aspect-ratio:16/10;
+
+object-fit:cover;
+
 }
 
-/* Texto debajo */
+
+
+/* TEXTO DEBAJO */
 
 .contenido{
-    position:static;
-    background:#1b1b1b;
-    padding:12px;
-    border-top:3px solid #8d0000;
+
+position:static;
+
+background:#1b1b1b;
+
+padding:12px;
+
+border-top:3px solid #8d0000;
+
+box-shadow:none;
+
 }
 
-/* Título */
+
 
 .titulo{
-    font-size:15px;
-    line-height:1.25;
-    margin-bottom:6px;
-    color:#fff;
+
+font-size:15px;
+
 }
 
-/* Subtítulo */
+
 
 .subtitulo{
-    font-size:12px;
-    color:#cfcfcf;
-    line-height:1.4;
 
-    display:-webkit-box;
-    -webkit-line-clamp:3;
-    -webkit-box-orient:vertical;
-    overflow:hidden;
+font-size:12px;
+
+line-height:1.4;
+
 }
+
+
 
 }
 
@@ -182,49 +278,79 @@ body{
 
 </head>
 
+
 <body>
+
 
 <div class="galeria" id="galeria"></div>
 
+
+
 <script>
 
+
 fetch("curiosidades.json")
+
+
 .then(res=>res.json())
+
+
 .then(datos=>{
+
 
 let html="";
 
+
 datos.forEach((item,index)=>{
 
-html+=`
+
+html += `
+
 
 <a href="${item.enlace}" target="_blank" class="tarjeta entrada" style="animation-delay:${index*0.25}s">
 
+
 <img src="https://kastewar2000-max.github.io/archivos-del-pasado-ui/${item.imagen}" alt="${item.titulo}">
+
 
 <div class="contenido">
 
+
 <div class="titulo">
+
 ${item.titulo}
+
 </div>
+
 
 <div class="subtitulo">
+
 ${item.subtitulo}
-</div>
 
 </div>
+
+
+</div>
+
 
 </a>
 
+
 `;
 
+
 });
+
 
 document.getElementById("galeria").innerHTML=html;
 
+
 });
+
 
 </script>
 
+
 </body>
+
 </html>
