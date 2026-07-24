@@ -1,6 +1,6 @@
 [
   {
-    "imagen": img/"imagen1.jpg",
+    "imagen": "img/imagen1.jpg",
     "titulo": "El gato espía de la CIA",
     "subtitulo": "Una curiosa operación de inteligencia que utilizó un gato como método de vigilancia durante la Guerra Fría.",
     "enlace": "https://www.archivosdelpasado.com",
@@ -11,7 +11,7 @@
   },
 
   {
-    "imagen": img/"imagen3.jpg",
+    "imagen": "img/imagen3.jpg",
     "titulo": "Un documento histórico recuperado",
     "subtitulo": "Imágenes restauradas que muestran una historia olvidada del pasado.",
     "enlace": "https://www.archivosdelpasado.com",
