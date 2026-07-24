@@ -58,7 +58,7 @@ box-shadow:0 16px 36px rgba(0,0,0,.50);
 }
 
 
-/* ANIMACIÓN ENTRADA */
+/* ANIMACIÓN */
 
 .entrada{
 
@@ -72,21 +72,16 @@ transform:translateY(25px);
 @keyframes aparecer{
 
 from{
-
 opacity:0;
 transform:translateY(25px);
-
 }
 
 to{
-
 opacity:1;
 transform:translateY(0);
-
 }
 
 }
-
 
 
 /* IMAGEN */
@@ -94,13 +89,9 @@ transform:translateY(0);
 .tarjeta img{
 
 width:100%;
-
 aspect-ratio:16/10;
-
 object-fit:contain;
-
 display:block;
-
 background:#111;
 
 transition:transform .45s ease;
@@ -108,11 +99,40 @@ transition:transform .45s ease;
 }
 
 
-/* ZOOM IMAGEN PC */
-
 .tarjeta:hover img{
 
 transform:scale(1.06);
+
+}
+
+
+
+/* ETIQUETA */
+
+.etiqueta{
+
+position:absolute;
+
+top:12px;
+left:12px;
+
+background:rgba(190,140,20,.90);
+
+color:white;
+
+font-size:11px;
+
+font-weight:bold;
+
+padding:6px 10px;
+
+border-radius:6px;
+
+box-shadow:0 4px 10px rgba(0,0,0,.35);
+
+z-index:5;
+
+letter-spacing:.5px;
 
 }
 
@@ -128,20 +148,14 @@ left:0;
 right:0;
 bottom:0;
 
-
 padding:18px 15px 15px;
-
 
 background:rgba(110,0,0,.68);
 
-
 backdrop-filter:blur(5px);
-
 -webkit-backdrop-filter:blur(5px);
 
-
 border-top:1px solid rgba(255,160,160,.35);
-
 
 box-shadow:0 -10px 20px rgba(120,0,0,.45);
 
@@ -170,7 +184,6 @@ line-height:1.35;
 
 color:#f0f0f0;
 
-
 display:-webkit-box;
 -webkit-line-clamp:3;
 -webkit-box-orient:vertical;
@@ -180,10 +193,7 @@ overflow:hidden;
 
 
 
-/* ---------------- */
 /* MOVIL */
-/* ---------------- */
-
 
 @media(max-width:700px){
 
@@ -199,20 +209,11 @@ gap:12px;
 }
 
 
-
 .tarjeta{
 
 display:flex;
 
 flex-direction:column;
-
-}
-
-
-
-.tarjeta:hover{
-
-box-shadow:0 8px 20px rgba(0,0,0,.35);
 
 }
 
@@ -236,7 +237,7 @@ object-fit:cover;
 
 
 
-/* TEXTO DEBAJO */
+/* texto debajo */
 
 .contenido{
 
@@ -253,13 +254,11 @@ box-shadow:none;
 }
 
 
-
 .titulo{
 
 font-size:15px;
 
 }
-
 
 
 .subtitulo{
@@ -270,6 +269,17 @@ line-height:1.4;
 
 }
 
+
+.etiqueta{
+
+top:8px;
+left:8px;
+
+font-size:10px;
+
+padding:5px 8px;
+
+}
 
 
 }
@@ -313,6 +323,11 @@ html += `
 <img src="https://kastewar2000-max.github.io/archivos-del-pasado-ui/${item.imagen}" alt="${item.titulo}">
 
 
+<div class="etiqueta">
+💡 CURIOSIDAD
+</div>
+
+
 <div class="contenido">
 
 
@@ -337,7 +352,6 @@ ${item.subtitulo}
 
 
 `;
-
 
 });
 
