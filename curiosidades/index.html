@@ -8,57 +8,33 @@
 
 <style>
 
-/* ================================
-   ARCHIVOS DEL PASADO
-   GALERÍA V3.0
-   ================================ */
-
-
 body{
-
 margin:0;
-
 font-family:Arial,sans-serif;
-
 background:transparent;
-
 }
 
 
-/* ================================
-   GALERÍA
-   ================================ */
-
+/* GALERIA */
 
 .galeria{
 
 display:grid;
-
 grid-template-columns:repeat(2,minmax(0,1fr));
-
 gap:20px;
-
 width:90%;
-
 max-width:1100px;
-
 margin:auto;
 
 }
 
 
-
-/* ================================
-   TARJETA
-   ================================ */
-
+/* TARJETA */
 
 .tarjeta{
 
 position:relative;
-
 text-decoration:none;
-
 color:white;
 
 border-radius:12px;
@@ -78,7 +54,6 @@ transition:.3s;
 }
 
 
-
 .tarjeta:hover{
 
 box-shadow:0 16px 36px rgba(0,0,0,.5);
@@ -87,10 +62,7 @@ box-shadow:0 16px 36px rgba(0,0,0,.5);
 
 
 
-/* ================================
-   ANIMACIÓN ENTRADA
-   ================================ */
-
+/* ANIMACION */
 
 .entrada{
 
@@ -103,9 +75,7 @@ transform:translateY(25px);
 }
 
 
-
 @keyframes aparecer{
-
 
 from{
 
@@ -115,7 +85,6 @@ transform:translateY(25px);
 
 }
 
-
 to{
 
 opacity:1;
@@ -124,15 +93,11 @@ transform:translateY(0);
 
 }
 
-
 }
 
 
 
-/* ================================
-   IMAGEN
-   ================================ */
-
+/* IMAGEN */
 
 .tarjeta img{
 
@@ -160,10 +125,9 @@ transform:scale(1.06);
 
 
 
-/* ================================
-   PALETA DE COLORES
-   (controlada desde JSON)
-   ================================ */
+/* =====================
+   PALETA
+   ===================== */
 
 
 :root{
@@ -174,7 +138,7 @@ transform:scale(1.06);
 --panel-burdeos:rgba(110,0,0,.68);
 
 
---negro:#222;
+--negro:#222222;
 
 --panel-negro:rgba(20,20,20,.70);
 
@@ -198,10 +162,7 @@ transform:scale(1.06);
 
 
 
-/* ================================
-   ETIQUETA SUPERIOR
-   ================================ */
-
+/* ETIQUETA */
 
 .etiqueta{
 
@@ -210,7 +171,6 @@ position:absolute;
 top:12px;
 
 left:12px;
-
 
 color:white;
 
@@ -222,30 +182,21 @@ padding:7px 12px;
 
 border-radius:6px;
 
-
 z-index:20;
-
 
 box-shadow:0 4px 10px rgba(0,0,0,.5);
 
-
 letter-spacing:.5px;
-
 
 }
 
 
 
-/* ================================
-   PANEL DE TEXTO PC
-   ================================ */
-
+/* PANEL TEXTO PC */
 
 .contenido{
 
-
 position:absolute;
-
 
 left:0;
 
@@ -253,31 +204,20 @@ right:0;
 
 bottom:0;
 
-
 padding:18px 15px 15px;
 
-
 background:var(--panel-burdeos);
-
 
 backdrop-filter:blur(5px);
 
 -webkit-backdrop-filter:blur(5px);
 
-
-
 border-top:1px solid rgba(255,160,160,.35);
-
 
 box-shadow:0 -10px 20px rgba(120,0,0,.45);
 
-
-
 }
 
-
-
-/* TITULO */
 
 
 .titulo{
@@ -292,9 +232,6 @@ line-height:1.2;
 
 
 
-/* SUBTITULO */
-
-
 .subtitulo{
 
 font-size:13px;
@@ -305,7 +242,6 @@ line-height:1.35;
 
 color:#f0f0f0;
 
-
 display:-webkit-box;
 
 -webkit-line-clamp:3;
@@ -314,131 +250,88 @@ display:-webkit-box;
 
 overflow:hidden;
 
-
 }
 
 
 
-/* ================================
-   VERSION MOVIL
-   ================================ */
-
+/* MOVIL */
 
 @media(max-width:700px){
 
 
 .galeria{
 
-
 grid-template-columns:repeat(2,minmax(0,1fr));
-
 
 width:95%;
 
-
 gap:12px;
-
 
 }
 
 
-
 .tarjeta{
-
 
 display:flex;
 
 flex-direction:column;
 
-
 }
-
 
 
 .tarjeta:hover img{
 
-
 transform:none;
-
 
 }
 
-
-
-/* etiqueta móvil */
 
 
 .etiqueta{
 
-
 position:static;
-
 
 order:-1;
 
-
 width:100%;
-
 
 box-sizing:border-box;
 
-
 border-radius:0;
-
 
 padding:5px 8px;
 
-
 font-size:10px;
-
-
 
 box-shadow:none;
 
-
 letter-spacing:.4px;
-
 
 }
 
-
-
-/* imagen móvil */
 
 
 .tarjeta img{
 
-
 aspect-ratio:16/10;
 
-
 object-fit:cover;
-
 
 }
 
 
 
-/* panel móvil */
-
-
 .contenido{
-
 
 position:static;
 
-
 background:#1b1b1b;
-
 
 padding:12px;
 
-
 border-top:3px solid var(--burdeos);
 
-
 box-shadow:none;
-
 
 }
 
@@ -461,9 +354,7 @@ line-height:1.4;
 
 
 }
-
-
-</style>
+   </style>
 
 </head>
 
@@ -472,15 +363,29 @@ line-height:1.4;
 
 
 <div class="galeria" id="galeria"></div>
+
+
+
 <script>
 
 
-/* ================================
-   CONFIGURACIÓN DE COLORES
-   ================================ */
+/* ===============================
+   COLORES DISPONIBLES
+   =============================== */
 
 
 const colores = {
+
+
+rojo:{
+
+etiqueta:"#8b0000",
+
+panel:"rgba(110,0,0,.68)",
+
+borde:"#8b0000"
+
+},
 
 
 burdeos:{
@@ -494,7 +399,6 @@ borde:"#8b0000"
 },
 
 
-
 negro:{
 
 etiqueta:"#222222",
@@ -504,7 +408,6 @@ panel:"rgba(20,20,20,.70)",
 borde:"#222222"
 
 },
-
 
 
 azul:{
@@ -518,7 +421,6 @@ borde:"#0d3b66"
 },
 
 
-
 verde:{
 
 etiqueta:"#2d6a4f",
@@ -528,7 +430,6 @@ panel:"rgba(45,106,79,.70)",
 borde:"#2d6a4f"
 
 },
-
 
 
 dorado:{
@@ -547,9 +448,9 @@ borde:"#8b6a00"
 
 
 
-/* ================================
-   CARGA DEL JSON
-   ================================ */
+/* ===============================
+   CARGAR JSON
+   =============================== */
 
 
 fetch("curiosidades.json")
@@ -564,22 +465,13 @@ fetch("curiosidades.json")
 let html="";
 
 
-
 datos.forEach((item,index)=>{
 
 
-/* COLOR DE ETIQUETA */
+let colorEtiqueta = colores[item.colorEtiqueta] || colores.rojo;
 
 
-let colorEtiqueta = colores[item.colorEtiqueta] || colores.burdeos;
-
-
-
-/* COLOR DEL PANEL */
-
-
-let colorPanel = colores[item.colorPanel] || colores.burdeos;
-
+let colorPanel = colores[item.colorPanel] || colores.rojo;
 
 
 
@@ -597,11 +489,10 @@ style="animation-delay:${index*0.25}s">
 
 
 <div class="etiqueta"
+
 style="background:${colorEtiqueta.etiqueta};">
 
-
 ${item.etiqueta || "💡 CURIOSIDAD"}
-
 
 </div>
 
@@ -610,8 +501,11 @@ ${item.etiqueta || "💡 CURIOSIDAD"}
 
 
 <img 
+
 loading="lazy"
-src="https://kastewar2000-max.github.io/archivos-del-pasado-ui/${item.imagen}" 
+
+src="${item.imagen}"
+
 alt="${item.titulo}">
 
 
@@ -622,9 +516,13 @@ alt="${item.titulo}">
 <div class="contenido"
 
 style="
+
 background:${colorPanel.panel};
+
 border-top-color:${colorPanel.borde};
+
 ">
+
 
 
 <div class="titulo">
@@ -632,6 +530,7 @@ border-top-color:${colorPanel.borde};
 ${item.titulo}
 
 </div>
+
 
 
 
@@ -643,9 +542,8 @@ ${item.subtitulo}
 
 
 
+
 </div>
-
-
 
 
 
@@ -667,12 +565,9 @@ document.getElementById("galeria").innerHTML=html;
 })
 
 
-
 .catch(error=>{
 
-
 console.error("Error cargando JSON:",error);
-
 
 });
 
