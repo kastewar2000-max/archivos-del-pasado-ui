@@ -29,15 +29,12 @@ margin:auto;
 }
 
 
-
 /* TARJETA */
 
 .tarjeta{
 
 position:relative;
-
 text-decoration:none;
-
 color:white;
 
 border-radius:12px;
@@ -64,7 +61,6 @@ box-shadow:0 16px 36px rgba(0,0,0,.5);
 }
 
 
-
 /* ANIMACION */
 
 .entrada{
@@ -81,19 +77,13 @@ transform:translateY(25px);
 @keyframes aparecer{
 
 from{
-
 opacity:0;
-
 transform:translateY(25px);
-
 }
 
 to{
-
 opacity:1;
-
 transform:translateY(0);
-
 }
 
 }
@@ -128,7 +118,7 @@ transform:scale(1.06);
 
 
 
-/* ETIQUETA */
+/* ETIQUETA PC */
 
 .etiqueta{
 
@@ -138,7 +128,7 @@ top:12px;
 
 left:12px;
 
-background:#b00000;
+background:#b88620;
 
 color:white;
 
@@ -158,7 +148,7 @@ box-shadow:0 4px 10px rgba(0,0,0,.5);
 
 
 
-/* TEXTO */
+/* TEXTO PC */
 
 .contenido{
 
@@ -170,15 +160,20 @@ right:0;
 
 bottom:0;
 
+
 padding:18px 15px 15px;
 
+
 background:rgba(110,0,0,.68);
+
 
 backdrop-filter:blur(5px);
 
 -webkit-backdrop-filter:blur(5px);
 
+
 border-top:1px solid rgba(255,160,160,.35);
+
 
 box-shadow:0 -10px 20px rgba(120,0,0,.45);
 
@@ -195,7 +190,6 @@ font-weight:bold;
 line-height:1.2;
 
 }
-
 
 
 .subtitulo{
@@ -254,6 +248,33 @@ transform:none;
 }
 
 
+/* etiqueta encima de la imagen */
+
+.etiqueta{
+
+position:static;
+
+order:-1;
+
+width:100%;
+
+box-sizing:border-box;
+
+border-radius:0;
+
+padding:8px 10px;
+
+font-size:11px;
+
+background:#b88620;
+
+box-shadow:none;
+
+}
+
+
+
+/* imagen */
 
 .tarjeta img{
 
@@ -264,6 +285,8 @@ object-fit:cover;
 }
 
 
+
+/* texto debajo */
 
 .contenido{
 
@@ -292,24 +315,12 @@ font-size:15px;
 
 font-size:12px;
 
-}
-
-
-.etiqueta{
-
-top:8px;
-
-left:8px;
-
-font-size:10px;
-
-padding:5px 8px;
+line-height:1.4;
 
 }
 
 
 }
-
 
 </style>
 
@@ -347,14 +358,13 @@ html += `
 <a href="${item.enlace}" target="_blank" class="tarjeta entrada" style="animation-delay:${index*0.25}s">
 
 
+<div class="etiqueta">
+💡 CURIOSIDAD
+</div>
+
+
 <img src="https://kastewar2000-max.github.io/archivos-del-pasado-ui/${item.imagen}" alt="${item.titulo}">
 
-
-<div class="etiqueta">
-
-💡 CURIOSIDAD
-
-</div>
 
 
 <div class="contenido">
