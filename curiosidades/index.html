@@ -8,268 +8,219 @@
 
 <style>
 
-body {
-margin:0;
-font-family:Arial, sans-serif;
-background:transparent;
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:transparent;
 }
-
 
 /* GALERÍA */
 
-.galeria {
-
-display:grid;
-grid-template-columns:repeat(2,minmax(0,1fr));
-gap:20px;
-width:90%;
-max-width:1100px;
-margin:auto;
-box-sizing:border-box;
-
+.galeria{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:20px;
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+    box-sizing:border-box;
 }
-
 
 /* TARJETA */
 
-.tarjeta {
-
-position:relative;
-text-decoration:none;
-color:white;
-border-radius:12px;
-overflow:hidden;
-display:block;
-transition:transform .2s;
-cursor:pointer;
-background:#111;
-
+.tarjeta{
+    position:relative;
+    text-decoration:none;
+    color:white;
+    border-radius:12px;
+    overflow:hidden;
+    display:block;
+    transition:.25s;
+    cursor:pointer;
+    background:#111;
+    box-shadow:0 8px 20px rgba(0,0,0,.35);
 }
 
-
-.tarjeta:hover {
-
-transform:scale(1.015);
-
+.tarjeta:hover{
+    transform:translateY(-4px);
+    box-shadow:0 14px 30px rgba(0,0,0,.45);
 }
-
 
 /* ANIMACIÓN */
 
-.entrada {
-
-animation:aparecer .6s ease forwards;
-opacity:0;
-transform:translateY(25px);
-
+.entrada{
+    animation:aparecer .6s ease forwards;
+    opacity:0;
+    transform:translateY(25px);
 }
 
-
-@keyframes aparecer {
-
-from {
-
-opacity:0;
-transform:translateY(25px);
-
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
-to {
+/* IMAGEN */
 
-opacity:1;
-transform:translateY(0);
-
+.tarjeta img{
+    width:100%;
+    aspect-ratio:16/10;
+    object-fit:contain;
+    display:block;
+    background:#111;
 }
 
+/* TEXTO PC */
+
+.contenido{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+
+    padding:35px 15px 15px;
+
+    background:linear-gradient(
+        transparent,
+        rgba(40,0,0,.88)
+    );
 }
 
-
-/* IMAGEN COMPLETA */
-
-.tarjeta img {
-
-width:100%;
-height:auto;
-aspect-ratio:16/10;
-object-fit:contain;
-display:block;
-background:#111;
-
+.titulo{
+    font-size:18px;
+    font-weight:bold;
+    line-height:1.2;
 }
 
+.subtitulo{
+    font-size:13px;
+    margin-top:7px;
+    line-height:1.35;
 
-/* TEXTO */
+    display:-webkit-box;
+    -webkit-line-clamp:3;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
 
-.contenido {
-
-position:absolute;
-bottom:0;
-left:0;
-right:0;
-
-padding:35px 15px 15px;
-
-background:linear-gradient(
-transparent,
-rgba(40,0,0,0.85)
-);
-
-border-radius:0 0 12px 12px;
-
+    color:#f0f0f0;
 }
 
-
-/* TITULO */
-
-.titulo {
-
-font-size:18px;
-font-weight:bold;
-line-height:1.2;
-
-}
-
-
-/* SUBTITULO */
-
-.subtitulo {
-
-font-size:13px;
-margin-top:7px;
-line-height:1.3;
-
-display:-webkit-box;
--webkit-line-clamp:3;
--webkit-box-orient:vertical;
-overflow:hidden;
-
-}
-
-
+/* ------------------------ */
 /* MÓVIL */
+/* ------------------------ */
 
-@media(max-width:700px){
+@media (max-width:700px){
 
-
-.galeria {
-
-grid-template-columns:repeat(2,minmax(0,1fr));
-width:95%;
-gap:10px;
-
+.galeria{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    width:95%;
+    gap:12px;
 }
 
-
-.tarjeta img {
-
-height:auto;
-
+.tarjeta{
+    display:flex;
+    flex-direction:column;
+    border-radius:12px;
+    overflow:hidden;
 }
 
-
-.contenido {
-
-padding:25px 10px 10px;
-
+.tarjeta:hover{
+    transform:none;
 }
 
+/* Imagen completa */
 
-.titulo {
-
-font-size:14px;
-
+.tarjeta img{
+    width:100%;
+    aspect-ratio:16/10;
+    object-fit:cover;
 }
 
+/* Texto debajo */
 
-.subtitulo {
-
-font-size:11px;
-
--webkit-line-clamp:3;
-
+.contenido{
+    position:static;
+    background:#1b1b1b;
+    padding:12px;
+    border-top:3px solid #8d0000;
 }
 
+/* Título */
 
+.titulo{
+    font-size:15px;
+    line-height:1.25;
+    margin-bottom:6px;
+    color:#fff;
 }
 
+/* Subtítulo */
+
+.subtitulo{
+    font-size:12px;
+    color:#cfcfcf;
+    line-height:1.4;
+
+    display:-webkit-box;
+    -webkit-line-clamp:3;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+}
+
+}
 
 </style>
 
 </head>
 
-
 <body>
-
 
 <div class="galeria" id="galeria"></div>
 
-
-
 <script>
 
-
 fetch("curiosidades.json")
-
-
 .then(res=>res.json())
-
-
 .then(datos=>{
-
 
 let html="";
 
-
 datos.forEach((item,index)=>{
 
-
-html += `
-
+html+=`
 
 <a href="${item.enlace}" target="_blank" class="tarjeta entrada" style="animation-delay:${index*0.25}s">
 
-
 <img src="https://kastewar2000-max.github.io/archivos-del-pasado-ui/${item.imagen}" alt="${item.titulo}">
-
 
 <div class="contenido">
 
-
 <div class="titulo">
-
 ${item.titulo}
-
 </div>
-
 
 <div class="subtitulo">
-
 ${item.subtitulo}
-
 </div>
 
-
 </div>
-
 
 </a>
 
-
 `;
 
-
 });
-
 
 document.getElementById("galeria").innerHTML=html;
 
-
 });
-
 
 </script>
 
-
 </body>
-
 </html>
