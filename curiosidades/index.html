@@ -62,8 +62,6 @@ box-shadow:0 16px 36px rgba(0,0,0,.5);
 
 
 
-/* ANIMACION */
-
 .entrada{
 
 animation:aparecer .6s ease forwards;
@@ -116,49 +114,12 @@ transition:transform .45s ease;
 }
 
 
-
 .tarjeta:hover img{
 
 transform:scale(1.06);
 
 }
 
-
-
-/* =====================
-   PALETA
-   ===================== */
-
-
-:root{
-
-
---burdeos:#8b0000;
-
---panel-burdeos:rgba(110,0,0,.68);
-
-
---negro:#222222;
-
---panel-negro:rgba(20,20,20,.70);
-
-
---azul:#0d3b66;
-
---panel-azul:rgba(13,59,102,.70);
-
-
---verde:#2d6a4f;
-
---panel-verde:rgba(45,106,79,.70);
-
-
---dorado:#8b6a00;
-
---panel-dorado:rgba(139,106,0,.70);
-
-
-}
 
 
 
@@ -186,13 +147,11 @@ z-index:20;
 
 box-shadow:0 4px 10px rgba(0,0,0,.5);
 
-letter-spacing:.5px;
-
 }
 
 
 
-/* PANEL TEXTO PC */
+/* TEXTO PC */
 
 .contenido{
 
@@ -206,15 +165,9 @@ bottom:0;
 
 padding:18px 15px 15px;
 
-background:var(--panel-burdeos);
-
 backdrop-filter:blur(5px);
 
 -webkit-backdrop-filter:blur(5px);
-
-border-top:1px solid rgba(255,160,160,.35);
-
-box-shadow:0 -10px 20px rgba(120,0,0,.45);
 
 }
 
@@ -229,7 +182,6 @@ font-weight:bold;
 line-height:1.2;
 
 }
-
 
 
 .subtitulo{
@@ -270,14 +222,6 @@ gap:12px;
 }
 
 
-.tarjeta{
-
-display:flex;
-
-flex-direction:column;
-
-}
-
 
 .tarjeta:hover img{
 
@@ -305,8 +249,6 @@ font-size:10px;
 
 box-shadow:none;
 
-letter-spacing:.4px;
-
 }
 
 
@@ -325,13 +267,11 @@ object-fit:cover;
 
 position:static;
 
-background:#1b1b1b;
-
 padding:12px;
 
-border-top:3px solid var(--burdeos);
-
 box-shadow:none;
+
+border-top:3px solid #8b0000;
 
 }
 
@@ -344,17 +284,18 @@ font-size:15px;
 }
 
 
+
 .subtitulo{
 
 font-size:12px;
 
-line-height:1.4;
-
 }
 
 
 }
-   </style>
+
+
+</style>
 
 </head>
 
@@ -363,14 +304,11 @@ line-height:1.4;
 
 
 <div class="galeria" id="galeria"></div>
-
-
-
 <script>
 
 
 /* ===============================
-   COLORES DISPONIBLES
+   PALETA DE COLORES
    =============================== */
 
 
@@ -475,14 +413,19 @@ let colorPanel = colores[item.colorPanel] || colores.rojo;
 
 
 
+
 html += `
 
 
 
-<a href="${item.enlace}" 
-target="_blank" 
+<a href="${item.enlace}"
+
+target="_blank"
+
 class="tarjeta entrada"
+
 style="animation-delay:${index*0.25}s">
+
 
 
 
@@ -500,13 +443,16 @@ ${item.etiqueta || "💡 CURIOSIDAD"}
 
 
 
-<img 
+
+
+<img
 
 loading="lazy"
 
-src="${item.imagen}"
+src="https://kastewar2000-max.github.io/archivos-del-pasado-ui/${item.imagen}"
 
 alt="${item.titulo}">
+
 
 
 
@@ -519,9 +465,11 @@ style="
 
 background:${colorPanel.panel};
 
-border-top-color:${colorPanel.borde};
+border-top:3px solid ${colorPanel.borde};
 
 ">
+
+
 
 
 
@@ -530,6 +478,7 @@ border-top-color:${colorPanel.borde};
 ${item.titulo}
 
 </div>
+
 
 
 
@@ -543,11 +492,16 @@ ${item.subtitulo}
 
 
 
+
+
 </div>
 
 
 
+
+
 </a>
+
 
 
 `;
@@ -567,7 +521,9 @@ document.getElementById("galeria").innerHTML=html;
 
 .catch(error=>{
 
-console.error("Error cargando JSON:",error);
+
+console.error("Error cargando curiosidades.json:",error);
+
 
 });
 
