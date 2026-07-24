@@ -25,9 +25,9 @@ gap:20px;
 width:90%;
 max-width:1100px;
 margin:auto;
-box-sizing:border-box;
 
 }
+
 
 
 /* TARJETA */
@@ -35,35 +35,44 @@ box-sizing:border-box;
 .tarjeta{
 
 position:relative;
+
 text-decoration:none;
+
 color:white;
+
 border-radius:12px;
+
 overflow:hidden;
+
 display:block;
+
 cursor:pointer;
 
 background:#111;
 
-transition:box-shadow .30s ease;
-
 box-shadow:0 8px 20px rgba(0,0,0,.35);
+
+transition:.3s;
 
 }
 
 
 .tarjeta:hover{
 
-box-shadow:0 16px 36px rgba(0,0,0,.50);
+box-shadow:0 16px 36px rgba(0,0,0,.5);
 
 }
 
 
-/* ANIMACIÓN */
+
+/* ANIMACION */
 
 .entrada{
 
 animation:aparecer .6s ease forwards;
+
 opacity:0;
+
 transform:translateY(25px);
 
 }
@@ -72,16 +81,23 @@ transform:translateY(25px);
 @keyframes aparecer{
 
 from{
+
 opacity:0;
+
 transform:translateY(25px);
+
 }
 
 to{
+
 opacity:1;
+
 transform:translateY(0);
+
 }
 
 }
+
 
 
 /* IMAGEN */
@@ -89,14 +105,19 @@ transform:translateY(0);
 .tarjeta img{
 
 width:100%;
+
 aspect-ratio:16/10;
+
 object-fit:contain;
+
 display:block;
+
 background:#111;
 
 transition:transform .45s ease;
 
 }
+
 
 
 .tarjeta:hover img{
@@ -114,38 +135,39 @@ transform:scale(1.06);
 position:absolute;
 
 top:12px;
+
 left:12px;
 
-background:rgba(190,140,20,.90);
+background:#b00000;
 
 color:white;
 
-font-size:11px;
+font-size:12px;
 
 font-weight:bold;
 
-padding:6px 10px;
+padding:7px 12px;
 
 border-radius:6px;
 
-box-shadow:0 4px 10px rgba(0,0,0,.35);
+z-index:20;
 
-z-index:5;
-
-letter-spacing:.5px;
+box-shadow:0 4px 10px rgba(0,0,0,.5);
 
 }
 
 
 
-/* TEXTO PC */
+/* TEXTO */
 
 .contenido{
 
 position:absolute;
 
 left:0;
+
 right:0;
+
 bottom:0;
 
 padding:18px 15px 15px;
@@ -153,6 +175,7 @@ padding:18px 15px 15px;
 background:rgba(110,0,0,.68);
 
 backdrop-filter:blur(5px);
+
 -webkit-backdrop-filter:blur(5px);
 
 border-top:1px solid rgba(255,160,160,.35);
@@ -163,30 +186,34 @@ box-shadow:0 -10px 20px rgba(120,0,0,.45);
 
 
 
-/* TITULO */
-
 .titulo{
 
 font-size:18px;
+
 font-weight:bold;
+
 line-height:1.2;
 
 }
 
 
-/* SUBTITULO */
 
 .subtitulo{
 
 font-size:13px;
+
 margin-top:7px;
+
 line-height:1.35;
 
 color:#f0f0f0;
 
 display:-webkit-box;
+
 -webkit-line-clamp:3;
+
 -webkit-box-orient:vertical;
+
 overflow:hidden;
 
 }
@@ -207,6 +234,7 @@ width:95%;
 gap:12px;
 
 }
+
 
 
 .tarjeta{
@@ -237,8 +265,6 @@ object-fit:cover;
 
 
 
-/* texto debajo */
-
 .contenido{
 
 position:static;
@@ -254,6 +280,7 @@ box-shadow:none;
 }
 
 
+
 .titulo{
 
 font-size:15px;
@@ -265,14 +292,13 @@ font-size:15px;
 
 font-size:12px;
 
-line-height:1.4;
-
 }
 
 
 .etiqueta{
 
 top:8px;
+
 left:8px;
 
 font-size:10px;
@@ -283,6 +309,7 @@ padding:5px 8px;
 
 
 }
+
 
 </style>
 
@@ -324,7 +351,9 @@ html += `
 
 
 <div class="etiqueta">
+
 💡 CURIOSIDAD
+
 </div>
 
 
